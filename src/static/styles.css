@@ -142,3 +142,90 @@ footer {
   padding: 20px;
   color: #666;
 }
+
+.participants-section {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed #e0e0e0;
+}
+
+.participants-section h5 {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.badge {
+  background: #e8f0ff;
+  color: #1a237e;
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid #c5cae9;
+}
+
+.participants-list {
+  list-style: disc;
+  padding-left: 20px;
+  margin-top: 6px;
+  max-height: 6.5rem; /* keep cards from getting too tall */
+  overflow: auto;
+  background: #fff;
+
+  /* Participants list: remove bullets and style rows */
+  .participants-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 8px 0 0 0;
+  }
+
+  .participants-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 6px;
+    border-bottom: 1px dashed #eee;
+    gap: 12px;
+  }
+
+  .participant-email {
+    color: #333;
+    font-size: 14px;
+    word-break: break-word;
+  }
+
+  .remove-btn {
+    background: transparent;
+    border: none;
+    color: #c62828;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 6px 8px;
+    border-radius: 4px;
+  }
+
+  .remove-btn:hover {
+    background: #ffebee;
+  }
+
+  .remove-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  word-break: break-word;
+}
+
+/* small visual improvement for empty-info paragraph */
+.activity-card .info {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #0c5460;
+  background: #f1f9fb;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #d9eef3;
+}
