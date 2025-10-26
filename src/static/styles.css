@@ -142,3 +142,58 @@ footer {
   padding: 20px;
   color: #666;
 }
+
+.participants-section {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed #e0e0e0;
+}
+
+.participants-section h5 {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.badge {
+  background: #e8f0ff;
+  color: #1a237e;
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid #c5cae9;
+}
+
+.participants-list {
+  list-style: disc;
+  padding-left: 20px;
+  margin-top: 6px;
+  max-height: 6.5rem; /* keep cards from getting too tall */
+  overflow: auto;
+  background: #fff;
+  border-radius: 4px;
+  padding: 8px 12px;
+  border: 1px solid #f0f0f0;
+}
+
+.participants-list li {
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: #444;
+  word-break: break-word;
+}
+
+/* small visual improvement for empty-info paragraph */
+.activity-card .info {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #0c5460;
+  background: #f1f9fb;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #d9eef3;
+}
