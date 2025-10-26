@@ -175,15 +175,47 @@ footer {
   max-height: 6.5rem; /* keep cards from getting too tall */
   overflow: auto;
   background: #fff;
-  border-radius: 4px;
-  padding: 8px 12px;
-  border: 1px solid #f0f0f0;
-}
 
-.participants-list li {
-  margin-bottom: 6px;
-  font-size: 13px;
-  color: #444;
+  /* Participants list: remove bullets and style rows */
+  .participants-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 8px 0 0 0;
+  }
+
+  .participants-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 6px;
+    border-bottom: 1px dashed #eee;
+    gap: 12px;
+  }
+
+  .participant-email {
+    color: #333;
+    font-size: 14px;
+    word-break: break-word;
+  }
+
+  .remove-btn {
+    background: transparent;
+    border: none;
+    color: #c62828;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 6px 8px;
+    border-radius: 4px;
+  }
+
+  .remove-btn:hover {
+    background: #ffebee;
+  }
+
+  .remove-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
   word-break: break-word;
 }
 

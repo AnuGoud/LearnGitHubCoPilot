@@ -42,7 +42,53 @@ document.addEventListener("DOMContentLoaded", () => {
           ul.className = "participants-list";
           details.participants.forEach((email) => {
             const li = document.createElement("li");
-            li.textContent = email;
+
+            const span = document.createElement("span");
+            span.className = "participant-email";
+            span.textContent = email;
+
+            const removeBtn = document.createElement("button");
+            removeBtn.type = "button";
+            removeBtn.className = "remove-btn";
+            removeBtn.title = `Unregister ${email}`;
+            removeBtn.setAttribute("aria-label", `Unregister ${email}`);
+            removeBtn.innerHTML = "✖";
+
+            // Delete handler
+            removeBtn.addEventListener("click", async () => {
+              // optimistic UI safeguard: disable while processing
+              removeBtn.disabled = true;
+              try {
+                const resp = await fetch(
+                  `/activities/${encodeURIComponent(name)}/participants/${encodeURIComponent(email)}`,
+                  { method: "DELETE" }
+                );
+                const data = await resp.json();
+                if (resp.ok) {
+                  messageDiv.textContent = data.message || "Participant removed";
+                  messageDiv.className = "message success";
+                  messageDiv.classList.remove("hidden");
+                  // refresh the UI
+                  fetchActivities();
+                } else {
+                  messageDiv.textContent = data.detail || data.message || "Failed to remove participant";
+                  messageDiv.className = "message error";
+                  messageDiv.classList.remove("hidden");
+                  removeBtn.disabled = false;
+                }
+              } catch (err) {
+                messageDiv.textContent = "Network error — could not remove participant.";
+                messageDiv.className = "message error";
+                messageDiv.classList.remove("hidden");
+                removeBtn.disabled = false;
+              }
+
+              // auto-hide message after a short delay
+              setTimeout(() => messageDiv.classList.add("hidden"), 5000);
+            });
+
+            li.appendChild(span);
+            li.appendChild(removeBtn);
             ul.appendChild(li);
           });
           participantsSection.appendChild(ul);
