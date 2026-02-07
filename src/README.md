@@ -1,4 +1,4 @@
-# Mergington High School Activities API
+Edited # Mergington High School Activities API
 
 A super simple FastAPI application that allows students to view and sign up for extracurricular activities.
 
@@ -46,5 +46,6 @@ The application uses a simple data model with meaningful identifiers:
 2. **Students** - Uses email as identifier:
    - Name
    - Grade level
+   - Class
 
 All data is stored in memory, which means data will be reset when the server restarts.
